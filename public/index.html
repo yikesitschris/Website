@@ -1,0 +1,93 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+  <title>Contact List App</title>
+</head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<body>
+  <div class="container" ng-controller="AppCtrl">
+    <div class="page-header">
+      <h1>Christopher Fong <small>About me</small></h1>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Education</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>School: </th>
+              <th>Degree: </th>
+              <th>Last Year: </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="educationList in education">
+              <td>{{educationList.school}}</td>
+              <td>{{educationList.degree}}</td>
+              <td>{{educationList.last_year}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Skills</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Skills: </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="skillList in skills">
+              <td>{{skillList.skill}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Projects</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title: </th>
+              <th>Description: </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="projectList in projects">
+              <td>{{projectList.title}}</td>
+              <td>{{projectList.description}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">
+  </script>
+  <script src="controllers/controller.js"></script>
+
+
+</body>
+
+</html>
